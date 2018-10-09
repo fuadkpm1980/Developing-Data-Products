@@ -1,0 +1,48 @@
+---
+title: "leaflet"
+author: "fuad"
+date: "October 9, 2018"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(leaflet)
+library(dplyr)
+```
+
+Instructions: 
+
+a. Create a web page using R Markdown that features a map created with Leaflet.
+
+b. Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+  Your webpage must contain the date that you created the document, and it must contain a map created with           Leaflet. We would love to see you show off your creativity!
+
+Review criteria
+The rubric contains the following two questions:
+
+Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+
+Does the web page feature an interactive map that appears to have been created with Leaflet?
+
+Submission:
+Here is the Malaysia popular place to visit Cyberjaya, Putrajaya, KLIA, National Zoo, KLCC and National Mosque.
+
+
+```{r eruptions, echo=FALSE}
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat=2.921318, lng=101.655935, popup="Cyberjaya, Malaysia") %>%
+  addMarkers(lat=2.926361,lng=101.696445, popup="Putrajaya, Malaysia") %>%
+  addMarkers(lat=2.75569,lng=101.70467, popup="KLIA, Malaysia") %>%
+  addMarkers(lat=3.209096,lng=101.758233, popup="National Zoo, Malaysia") %>%
+  addMarkers(lat=3.15916,lng=101.71366, popup="KLCC, Malaysia") %>%
+  addMarkers(lat=3.142094,lng=101.691774, popup="National Mosque, Malaysia") #%>%
+#setView (lat=2.6129, lng=101.2295, zoom=16) 
+
+m  # Print the map
+
+
